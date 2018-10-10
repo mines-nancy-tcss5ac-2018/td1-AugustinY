@@ -34,7 +34,30 @@ def liste_triée():
     T=sorted(L)
     return T
 
+alphabet=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+
+def score_prenom(prenom):
+    n=len(prenom)
+    s=0
+    for i in range(n):
+        for k in range(26):
+            if prenom[i]==alphabet[k]:
+                s+=k+1
+    return s
+
+def score_total():
+    L=liste_triée()
+    n=len(L)
+    s=0
+    for k in range(n):
+        s=s+(k+1)*score_prenom(L[k])
+    return s
+
+
+        
     
+    
+        
 
           
     
